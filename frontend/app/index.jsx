@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, TextInput, View, StyleSheet } from "react-native";
+import { Text, TouchableOpacity, TextInput, View, StyleSheet, Button } from "react-native";
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -7,6 +7,10 @@ export default function Index() {
   function cadastro() {
     roteador.push('/cadastrar');
   }
+  function home() {
+    roteador.push('/curtidas');
+  }
+
 
   const roteador = useRouter();
 
@@ -58,6 +62,9 @@ export default function Index() {
           <Text style={styles.footerLink}>Cadastre-se</Text>
         </Text>
       </TouchableOpacity>
+      <Button
+      title="home"
+      onPress={home}/>
     </View>
     </LinearGradient>
   );
